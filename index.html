@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silent Feedback System - Login</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="auth-page">
+
+<div class="auth-wrapper">
+  <div class="auth-container">
+    <div class="auth-header">
+      <div class="logo-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h1>Silent Feedback System</h1>
+      <p class="tagline">Your Voice Matters. Your Identity Protected.</p>
+    </div>
+
+    <div class="auth-tabs">
+      <button class="tab-btn active" data-tab="login">Login</button>
+      <button class="tab-btn" data-tab="signup">Sign Up</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" class="auth-form active">
+      <div class="form-group">
+        <label><i class="fas fa-envelope"></i> Email Address</label>
+        <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-lock"></i> Password</label>
+        <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-user-tag"></i> Select Your Role</label>
+        <select id="loginRole" name="role" required>
+          <option value="">-- Choose Role --</option>
+          <option value="employee">Employee</option>
+          <option value="hr">HR Manager</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+
+      <div class="form-footer">
+        <a href="#" class="forgot-link">Forgot Password?</a>
+      </div>
+    </form>
+
+    <!-- Signup Form -->
+    <form id="signupForm" class="auth-form">
+      <div class="form-group">
+        <label><i class="fas fa-user"></i> Full Name</label>
+        <input type="text" id="signupName" name="name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-envelope"></i> Email Address</label>
+        <input type="email" id="signupEmail" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-lock"></i> Password</label>
+        <input type="password" id="signupPassword" name="password" placeholder="Create a password" required>
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-lock"></i> Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required>
+      </div>
+
+      <div class="form-group">
+        <label><i class="fas fa-user-tag"></i> Select Your Role</label>
+        <select id="signupRole" name="role" required>
+          <option value="">-- Choose Role --</option>
+          <option value="employee">Employee</option>
+          <option value="hr">HR Manager</option>
+        </select>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="terms" required>
+        <label for="terms">I agree that my feedback will be completely anonymous</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-user-plus"></i> Create Account
+      </button>
+    </form>
+
+    <div class="security-notice">
+      <i class="fas fa-shield-check"></i>
+      <span>Your identity is protected. All feedback is completely anonymous.</span>
+    </div>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>

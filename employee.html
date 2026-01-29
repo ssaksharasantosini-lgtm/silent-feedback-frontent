@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard - Silent Feedback</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <div class="navbar-brand">
+                <i class="fas fa-shield-alt"></i> Silent Feedback
+            </div>
+            <div class="navbar-menu">
+                <a href="#questions"><i class="fas fa-question-circle"></i> Questions</a>
+                <a href="#feedback"><i class="fas fa-comment-dots"></i> My Feedback</a>
+                <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container">
+            <div id="alertContainer"></div>
+
+            <!-- Questions Section -->
+            <div id="questions" class="card">
+                <div class="card-title">
+                    <i class="fas fa-question-circle"></i> HR Questions
+                </div>
+                <div id="questionsList">
+                    <div class="spinner"></div> Loading questions...
+                </div>
+            </div>
+
+            <!-- My Feedback Section -->
+            <div id="feedback" class="card">
+                <div class="card-title">
+                    <i class="fas fa-comment-dots"></i> My Submitted Feedback
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Your Answer</th>
+                                <th>Status</th>
+                                <th>Date Submitted</th>
+                            </tr>
+                        </thead>
+                        <tbody id="feedbackList">
+                            <tr>
+                                <td colspan="4" style="text-align: center; padding: 30px;">
+                                    <div class="spinner"></div> Loading feedback...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/employee.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Dashboard - Silent Feedback</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <div class="navbar-brand">
+                <i class="fas fa-shield-alt"></i> Silent Feedback - HR
+            </div>
+            <div class="navbar-menu">
+                <a href="#questions"><i class="fas fa-list"></i> Questions</a>
+                <a href="#feedback"><i class="fas fa-inbox"></i> Feedback</a>
+                <a href="#analytics"><i class="fas fa-chart-bar"></i> Analytics</a>
+                <button class="logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container">
+            <div id="alertContainer"></div>
+
+            <!-- Create Question Section -->
+            <div class="card">
+                <div class="card-title">
+                    <i class="fas fa-plus-circle"></i> Create New Question
+                </div>
+                <form id="questionForm">
+                    <div class="form-group">
+                        <label for="questionText">Question Text</label>
+                        <input type="text" id="questionText" name="question_text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="questionType">Question Type</label>
+                        <select id="questionType" name="question_type" required>
+                            <option value="">Select Type</option>
+                            <option value="text">Text Answer</option>
+                            <option value="multiple_choice">Multiple Choice</option>
+                            <option value="rating">Rating (1-5)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-check"></i> Create Question
+                    </button>
+                </form>
+            </div>
+
+            <!-- Questions Section -->
+            <div id="questions" class="card">
+                <div class="card-title">
+                    <i class="fas fa-list"></i> Active Questions
+                </div>
+                <div id="questionsList">
+                    <div class="spinner"></div> Loading questions...
+                </div>
+            </div>
+
+            <!-- Feedback Section -->
+            <div id="feedback" class="card">
+                <div class="card-title">
+                    <i class="fas fa-inbox"></i> Employee Feedback
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>Question</th>
+                                <th>Answer</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="feedbackList">
+                            <tr>
+                                <td colspan="6" style="text-align: center; padding: 30px;">
+                                    <div class="spinner"></div> Loading feedback...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Analytics Section -->
+            <div id="analytics" class="card">
+                <div class="card-title">
+                    <i class="fas fa-chart-bar"></i> Analytics
+                </div>
+                <div id="analyticsList">
+                    <div class="spinner"></div> Loading analytics...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/hr.js"></script>
+</body>
+</html>
